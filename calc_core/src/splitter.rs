@@ -47,5 +47,8 @@ mod tests {
 		assert("10\t20\t+",vec!["10","20","+"]);
 		assert("10    20     +",vec!["10","20","+"]);
 		assert("-10 -200 +",vec!["-10","-200","+"]);
+		assert("",vec![]);
+		assert("         ",vec![]);
+		assert("\t",vec![]);
 	}
 }
