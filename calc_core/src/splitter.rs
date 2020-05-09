@@ -10,13 +10,15 @@ pub fn split(source: &str) ->VecDeque<&str> {
 	fn is_delimiter(c:&char)->bool{*c==' '||*c=='\t'};
 
 
-	for elem in source.chars().chain(" ".chars()).enumerate(){
+	for elem in source.trim().chars().chain(" ".chars()).enumerate(){
 
 		match (remain,elem.0,is_delimiter(&elem.1),flg) {
 			(_,_,true,true)=>{},
 			(begin,current,true,false)=>{
 				flg=true;
-				accum.push_back(&source[begin..current]);
+				if begin!=current {
+					accum.push_back(&source[begin..current]);
+				}
 			},
 			(_,current,false,true)=>{
 				remain=current;

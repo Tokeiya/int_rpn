@@ -1,10 +1,13 @@
+use calc_core::splitter::split;
 
 fn main() {
-	
-	let v:Vec<i32> =vec![];
-	
-	
 
+    let out=split("   ");
 
+    println!("{}",out.len());
+
+    for elem in out.iter().enumerate() {
+        println!("{}:{}",elem.0,elem.1);
+    }
 
 }
